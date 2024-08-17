@@ -28,7 +28,8 @@
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "server": "nodemon ./server/index.js"
   },
   "browserslist": [
     "defaults and fully supports es6-module",
@@ -57,7 +58,8 @@
     "log4js": "^6.9.1",
     "mysql2": "^3.11.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
