@@ -3,6 +3,15 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/order/order'
   ],
+  // subPackages: [
+  //   {
+  //     root: "pages/flight",
+  //     pages: [
+  //       // "list/list",
+  //       // "detail/detail"
+  //     ]
+  //   },
+  // ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',

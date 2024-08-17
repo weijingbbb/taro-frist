@@ -1,6 +1,8 @@
 import { View } from '@tarojs/components';
 import { useLoad } from '@tarojs/taro';
 import React, { useState } from 'react';
+import NoExploit from '../../components/NoExploit';
+import FlightIndex from '../flight/index';
 import './index.scss';
 
 const DEFAULT_TAB_LIST = [
@@ -10,6 +12,7 @@ const DEFAULT_TAB_LIST = [
 
 export default function Index () {
   const [tabIndex, setTabIndex] = useState(0)
+
 
   const innerStyle = {
     width: `${100 / DEFAULT_TAB_LIST.length}%`,
@@ -28,21 +31,21 @@ export default function Index () {
   return (
     <View className='index-container'>
       <View className='top'>
-        <View className='index-tab'>
-          {
-            DEFAULT_TAB_LIST.map(item => {
-              return <View key={item.tab} className={`index_tab_item ${item.tab} ${tabIndex === item.index ? 'current' : ''}`} onClick={() => switchTab(item.index)}>
-              {item.title}
-            </View>
-            })
-          }
-        </View>
-        <View className="scrollbar" style={innerStyle}></View>
+          <View className="index-tab">
+            {
+              DEFAULT_TAB_LIST.map(item => (
+                <View key={item.tab} className={`index_tab_item ${item.tab} ${tabIndex === item.index ? 'current' : ''}`} onClick={() => switchTab(item.index)}>
+                  {item.title}
+                </View>
+              ))
+            }
+          </View>
+          <View className="scrollbar" style={innerStyle}></View>
       </View>
       {
           DEFAULT_TAB_LIST[tabIndex]['tab'] === "flight" ? (
-            <View className='content'>机票</View>
-          ) : <View className='content'>火车票</View>
+            <FlightIndex />
+          ) : <NoExploit />
         }
     </View>
   )
