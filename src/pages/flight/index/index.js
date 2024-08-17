@@ -1,5 +1,6 @@
-import { Swiper, SwiperItem, View } from '@tarojs/components';
-import React, { useState } from 'react';
+import { adsReq } from '@/common/api';
+import { Image, Swiper, SwiperItem, View } from '@tarojs/components';
+import React, { useEffect, useState } from 'react';
 import Tab from '../../../components/Tab';
 import './index.scss';
 
@@ -26,6 +27,17 @@ export default function FlightIndex() {
   const handleTabClick = (id) => {
     console.log('handleTabClick---',id)
   }
+
+  const getAds = () => {
+    adsReq().then(res=> {
+      const { result } = res
+      setAdList(result || [])
+    })
+  }
+
+  useEffect(() => {
+    getAds()
+  },[])
 
   return (
     <View className="flight-container">

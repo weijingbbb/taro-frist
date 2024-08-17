@@ -56,6 +56,9 @@ importers:
       '@tarojs/taro':
         specifier: 4.0.4
         version: 4.0.4(@tarojs/components@4.0.4(@tarojs/helper@4.0.4)(@tarojs/shared@4.0.4)(@types/react@18.3.3)(postcss@8.4.41)(react@18.3.1)(rollup@3.29.4))(@tarojs/helper@4.0.4)(@tarojs/shared@4.0.4)(@types/react@18.3.3)(postcss@8.4.41)(rollup@3.29.4)
+      dayjs:
+        specifier: ^1.11.12
+        version: 1.11.12
       express:
         specifier: ^4.19.2
         version: 4.19.2
@@ -2385,6 +2388,9 @@ packages:
   date-format@4.0.14:
     resolution: {integrity: sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==}
     engines: {node: '>=4.0'}
+
+  dayjs@1.11.12:
+    resolution: {integrity: sha512-Rt2g+nTbLlDWZTwwrIXjy9MeiZmSDI375FvZs72ngxx8PDC6YXOeR3q5LAuPzjZQxhiWdRKac7RKV+YyQYfYIg==}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -7447,6 +7453,8 @@ snapshots:
       is-data-view: 1.0.1
 
   date-format@4.0.14: {}
+
+  dayjs@1.11.12: {}
 
   debug@2.6.9:
     dependencies:
