@@ -1,13 +1,16 @@
 import { adsReq } from '@/common/api';
-import { Image, Swiper, SwiperItem, View } from '@tarojs/components';
+import { Button, Image, Swiper, SwiperItem, View } from '@tarojs/components';
 import React, { useEffect, useState } from 'react';
 import Tab from '../../../components/Tab';
+import useBoundStore from '../../../models/user-z';
 import './index.scss';
 
 export default function FlightIndex() {
 
   // 广告banner
   const [adList, setAdList] = useState([])
+  const count = useBoundStore((state) => state.count)
+  const increasePopulation = useBoundStore((state) => state.increasePopulation)
 
   const FLIGHT_TABS = [
     {
@@ -43,7 +46,7 @@ export default function FlightIndex() {
     <View className="flight-container">
       <View className="flight-top">
         <Tab tabList={FLIGHT_TABS} onTabClick={handleTabClick} className="flight-index-tab">
-          <SwiperItem className=''>111</SwiperItem>
+          <SwiperItem className=''>{count}<Button onTap={increasePopulation}>增加</Button></SwiperItem>
           <SwiperItem className=''>222</SwiperItem>
           <SwiperItem className=''>333</SwiperItem>
         </Tab>

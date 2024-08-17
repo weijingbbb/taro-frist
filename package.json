@@ -54,12 +54,16 @@
     "@tarojs/shared": "4.0.4",
     "@tarojs/taro": "4.0.4",
     "dayjs": "^1.11.12",
+    "dva": "^2.4.1",
+    "dva-core": "^2.0.4",
     "express": "^4.19.2",
     "log4js": "^6.9.1",
     "mysql2": "^3.11.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "request": "^2.88.2"
+    "react-redux": "^7.2.0",
+    "request": "^2.88.2",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
