@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const sqlQuery = require("../mysql");
-const request = require("request")
+// const request = require("request")
 
 // demo
 // 创建机场城市列表mysql
