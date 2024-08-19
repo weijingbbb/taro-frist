@@ -17,7 +17,7 @@ export default function Main () {
     tools.showLoading()
     const storageList = tools.getStorageSyncWithTime("flightCityList")
     if (storageList?.length) {
-      const obj = this.formatList(storageList)
+      const obj = formatList(storageList)
       setCityListObj(obj)
       setLetterList(Object.keys(obj))
       tools.hideLoading()
