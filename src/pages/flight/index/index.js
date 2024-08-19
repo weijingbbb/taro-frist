@@ -1,5 +1,6 @@
 import { adsReq } from '@/common/api';
 import tools from "@/common/tools";
+import { sleep } from '@/common/utils';
 import { Button, Image, Swiper, SwiperItem, Text, View } from '@tarojs/components';
 import Taro from "@tarojs/taro";
 import dayjs from 'dayjs';
@@ -57,8 +58,28 @@ export default function FlightIndex() {
     })
   }
 
+  // 反转城市
   const exchangeCity = async () => {
-    console.log('exchangeCity');
+    const {
+      dptCityName,
+      dptCityId,
+      arrCityId,
+      arrCityName,
+      dptAirportName,
+      arrAirportName,
+    } = flight;
+    const exchangeObj = {
+      dptCityName: arrCityName,
+      dptCityId: arrCityId,
+      arrCityName: dptCityName,
+      arrCityId: dptCityId,
+      dptAirportName: arrAirportName,
+      arrAirportName: dptAirportName,
+    };
+    setIsExchange(true);
+    updateFlight(exchangeObj);
+    await sleep(500);
+    setIsExchange(false);
   }
 
   /**

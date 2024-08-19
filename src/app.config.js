@@ -5,15 +5,15 @@ export default defineAppConfig({
     'pages/airportList/airportList',
     'pages/calendar/calendar',
   ],
-  // subPackages: [
-  //   {
-  //     root: "pages/flight",
-  //     pages: [
-  //       // "list/list",
-  //       // "detail/detail"
-  //     ]
-  //   },
-  // ],
+  subPackages: [
+    {
+      root: "pages/flight",
+      pages: [
+        "list/list",
+        // "detail/detail"
+      ]
+    },
+  ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
