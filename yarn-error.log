@@ -1,0 +1,123 @@
+Arguments: 
+  /Users/weijing/.nvm/versions/node/v18.20.2/bin/node /Users/weijing/.yarn/bin/yarn.js add taro-ui
+
+PATH: 
+  /opt/homebrew/opt/ruby/bin:/Users/weijing/.nvm/versions/node/v18.20.2/bin:/Users/weijing/.yarn/bin:/Users/weijing/.config/yarn/global/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/weijing/Library/pnpm:/opt/homebrew/opt/ruby/bin:/Users/weijing/.nvm/versions/node/v18.20.2/bin:/Users/weijing/.yarn/bin:/Users/weijing/.config/yarn/global/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/weijing/Library/Android/sdk/emulator:/Users/weijing/Library/Android/sdk/tools:/Users/weijing/Library/Android/sdk/tools/bin:/Users/weijing/Library/Android/sdk/platform-tools:/Users/weijing/mongodb/bin:/Users/weijing/flutter/bin:/Users/weijing/gradle-6.5/bin:/Users/weijing/.pub-cache/bin:/Users/weijing/Library/Android/sdk/emulator:/Users/weijing/Library/Android/sdk/tools:/Users/weijing/Library/Android/sdk/tools/bin:/Users/weijing/Library/Android/sdk/platform-tools:/Users/weijing/mongodb/bin:/Users/weijing/flutter/bin:/Users/weijing/gradle-6.5/bin:/Users/weijing/.pub-cache/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  18.20.2
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/weijing/Library/Caches/Yarn/v6/npm-escape-string-regexp-4.0.0-14ba83a5d373e3d311e5afca29cf5bfad965bf34-integrity/node_modules/escape-string-regexp/index.d.ts' -> '/Users/weijing/ExerciseProject/taro/taro-express-mysql/node_modules/eslint/node_modules/escape-string-regexp/index.d.ts'
+
+npm manifest: 
+  {
+    "name": "taro-express-mysql",
+    "version": "1.0.0",
+    "private": true,
+    "description": "仿智行项目",
+    "templateInfo": {
+      "name": "default",
+      "typescript": false,
+      "css": "Sass",
+      "framework": "React"
+    },
+    "scripts": {
+      "build:weapp": "taro build --type weapp",
+      "build:swan": "taro build --type swan",
+      "build:alipay": "taro build --type alipay",
+      "build:tt": "taro build --type tt",
+      "build:h5": "taro build --type h5",
+      "build:rn": "taro build --type rn",
+      "build:qq": "taro build --type qq",
+      "build:jd": "taro build --type jd",
+      "build:harmony-hybrid": "taro build --type harmony-hybrid",
+      "dev:weapp": "npm run build:weapp -- --watch",
+      "dev:swan": "npm run build:swan -- --watch",
+      "dev:alipay": "npm run build:alipay -- --watch",
+      "dev:tt": "npm run build:tt -- --watch",
+      "dev:h5": "npm run build:h5 -- --watch",
+      "dev:rn": "npm run build:rn -- --watch",
+      "dev:qq": "npm run build:qq -- --watch",
+      "dev:jd": "npm run build:jd -- --watch",
+      "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
+      "lint-staged": "lint-staged",
+      "server": "nodemon ./server/index.js"
+    },
+    "browserslist": [
+      "defaults and fully supports es6-module",
+      "maintained node versions"
+    ],
+    "author": "",
+    "dependencies": {
+      "@babel/runtime": "^7.24.4",
+      "@tarojs/components": "4.0.4",
+      "@tarojs/helper": "4.0.4",
+      "@tarojs/plugin-framework-react": "4.0.4",
+      "@tarojs/plugin-platform-alipay": "4.0.4",
+      "@tarojs/plugin-platform-h5": "4.0.4",
+      "@tarojs/plugin-platform-harmony-hybrid": "4.0.4",
+      "@tarojs/plugin-platform-jd": "4.0.4",
+      "@tarojs/plugin-platform-qq": "4.0.4",
+      "@tarojs/plugin-platform-swan": "4.0.4",
+      "@tarojs/plugin-platform-tt": "4.0.4",
+      "@tarojs/plugin-platform-weapp": "4.0.4",
+      "@tarojs/react": "4.0.4",
+      "@tarojs/runtime": "4.0.4",
+      "@tarojs/shared": "4.0.4",
+      "@tarojs/taro": "4.0.4",
+      "dayjs": "^1.11.12",
+      "dva": "^2.4.1",
+      "dva-core": "^2.0.4",
+      "express": "^4.19.2",
+      "log4js": "^6.9.1",
+      "mysql2": "^3.11.0",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "react-redux": "^7.2.0",
+      "request": "^2.88.2",
+      "zustand": "^4.5.5"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.24.4",
+      "@babel/plugin-proposal-class-properties": "7.14.5",
+      "@babel/preset-react": "^7.24.1",
+      "@tarojs/cli": "4.0.4",
+      "@tarojs/vite-runner": "4.0.4",
+      "@types/react": "^18.0.0",
+      "@vitejs/plugin-react": "^4.3.0",
+      "babel-preset-taro": "4.0.4",
+      "eslint": "^8.57.0",
+      "eslint-config-taro": "4.0.4",
+      "eslint-plugin-react": "^7.34.1",
+      "eslint-plugin-react-hooks": "^4.4.0",
+      "husky": "^9.1.4",
+      "lint-staged": "^15.2.9",
+      "postcss": "^8.4.38",
+      "react-refresh": "^0.14.0",
+      "sass": "^1.75.0",
+      "stylelint": "^16.4.0",
+      "terser": "^5.30.4",
+      "vite": "^4.2.0"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*.{ts,tsx,js,vue,jsx}": "eslint"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

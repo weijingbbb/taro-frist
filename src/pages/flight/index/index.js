@@ -1,6 +1,8 @@
 import { adsReq } from '@/common/api';
-import { Image, Swiper, SwiperItem, Text, View } from '@tarojs/components';
+import tools from "@/common/tools";
+import { Button, Image, Swiper, SwiperItem, Text, View } from '@tarojs/components';
 import Taro from "@tarojs/taro";
+import dayjs from 'dayjs';
 import React, { useEffect, useState } from 'react';
 import Tab from '../../../components/Tab';
 import useFlightStore from '../../../models/flightIndex-z';
@@ -48,13 +50,82 @@ export default function FlightIndex() {
       url: "/pages/airportList/airportList"
     })
   }
+  // 跳转日历页
+  const chooseFlightDate = () => {
+    Taro.navigateTo({
+      url: "/pages/calendar/calendar"
+    })
+  }
 
   const exchangeCity = async () => {
     console.log('exchangeCity');
   }
 
+  /**
+   * 获取经纬度
+   * @{param}
+   */
+  const getLocationInfo = () => {
+    Taro.getLocation({
+      type: 'gcj02'
+    })
+      .then(res => {
+        const {
+          latitude,
+          longitude,
+        } = res
+        console.log('位置获取-----', latitude,
+          longitude,);
+        getCity({ latitude, longitude })
+      })
+      .catch(() => {
+        tools.showToast("位置获取失败~")
+      })
+  }
+  const getCity = ({ latitude, longitude }) => {
+    Taro.request({
+      url: `https://apis.map.qq.com/ws/geocoder/v1/?key=JKLBZ-WN3K4-HFSU6-DB5UU-2FGCS-CLB4J&location=${latitude},${longitude}`
+    })
+      .then((res) => {
+        const { data } = res
+        const cityInfo = data?.result?.ad_info || {}
+        updateFlight({
+          dptCityId: cityInfo.city_code || 2,
+          dptCityName: cityInfo.city || '上海'
+        })
+      })
+      .catch(() => {
+        tools.showToast("位置获取失败~")
+      })
+  }
+
+  const onLinkToList = () => {
+    const {
+      arrCityName,
+      arrCityId,
+      arrAirportName,
+      dptCityId,
+      dptCityName,
+      dptAirportName,
+      dptDate,
+    } = flight;
+    tools.navigateTo({
+      url: '/pages/flight/list/list',
+      data: {
+        arrCityName,
+        arrCityId,
+        arrAirportName,
+        dptCityId,
+        dptCityName,
+        dptAirportName,
+        dptDate,
+      }
+    })
+  }
+
   useEffect(() => {
     getAds()
+    getLocationInfo()
   }, [])
 
   return (
@@ -82,6 +153,13 @@ export default function FlightIndex() {
                 {flight.arrCityName}
               </View>
             </View>
+
+            <View className="item date" onClick={chooseFlightDate}>
+              {dayjs(flight.dptDate).format("M月D日")}
+            </View>
+            <Button className="search-btn" onClick={onLinkToList}>
+              搜一下吧～
+            </Button>
 
           </SwiperItem>
           <SwiperItem className=''>

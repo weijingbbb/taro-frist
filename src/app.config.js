@@ -3,6 +3,7 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/order/order',
     'pages/airportList/airportList',
+    'pages/calendar/calendar',
   ],
   // subPackages: [
   //   {
@@ -40,4 +41,9 @@ export default defineAppConfig({
       },
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "为了更好的服务体验，我们希望获取你的位置"
+    }
+  }
 })
