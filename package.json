@@ -63,6 +63,7 @@
     "react-dom": "^18.0.0",
     "react-redux": "^7.2.0",
     "request": "^2.88.2",
+    "taro-skeleton": "^2.0.4",
     "zustand": "^4.5.5"
   },
   "devDependencies": {

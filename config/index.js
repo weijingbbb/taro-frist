@@ -47,7 +47,7 @@ export default defineConfig(async (merge, { command, mode }) => {
       }
     },
     h5: {
-      esnextModules: ['taro-ui'],
+      esnextModules: ['taro-ui','taro-skeleton'],
       publicPath: '/',
       staticDirectory: 'static',
 
