@@ -1,10 +1,24 @@
-import { create } from 'zustand'
+import tools from '@/common/tools';
+import { create } from 'zustand';
 
+const userInfo = tools.getStorageSyncWithTime('userInfo')
 const useBoundStore = create((set) => ({
-  count: 0,
-  text: 'hello',
-  increasePopulation: () => set((state) => ({ count: state.count + 1 })),
-  setText: (text) => set({ text }),
+  user: {
+    isLogin: !!userInfo?.userPhone, // 是否登录
+    userPhone: userInfo?.userPhone,
+    nickName: userInfo?.nickName
+  },
+  updateState:(newVal) => set((state) => ({
+    user: {
+      ...state.user,
+      ...newVal
+    }
+  })),
+  loginOut() {
+    return {
+      ...init()
+    }
+  }
 }))
 
 export default useBoundStore

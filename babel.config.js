@@ -7,5 +7,5 @@ module.exports = {
       ts: false,
       compiler: 'vite',
     }]
-  ]
+  ],
 }

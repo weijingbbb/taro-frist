@@ -3,7 +3,8 @@ const router = express.Router();
 const sqlQuery = require("../mysql");
 
 router.post("/login", async (req, res) => {
-// req.body 
+  console.log('访问了login接口');
+// req.body
   try {
     const { userPhone, password, nickName } = req.body;
     const createTableSql = `

@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@babel/plugin-proposal-decorators':
+        specifier: ^7.24.7
+        version: 7.24.7(@babel/core@7.25.2)
       '@babel/runtime':
         specifier: ^7.24.4
         version: 7.25.0
+      '@rollup/plugin-babel':
+        specifier: ^6.0.4
+        version: 6.0.4(@babel/core@7.25.2)(@types/babel__core@7.20.5)(rollup@3.29.4)
       '@tarojs/components':
         specifier: 4.0.4
         version: 4.0.4(@tarojs/helper@4.0.4)(@tarojs/shared@4.0.4)(@types/react@18.3.3)(postcss@8.4.41)(react@18.3.1)(rollup@3.29.4)

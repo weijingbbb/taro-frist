@@ -91,6 +91,19 @@ const List = () => {
       })
   }
 
+  /**
+   * 跳转详情页
+   * @{param}
+   */
+  const onFlightClick = (curFlight) => {
+    tools.navigateTo({
+      url: '/pages/flight/detail/detail',
+      data: {
+        ...curFlight
+      }
+    })
+  }
+
   useEffect(() => {
     const { params } = getCurrentInstance().router;
     const {
@@ -179,7 +192,7 @@ const List = () => {
                     }
                     <View
                       className="list-item"
-                      onClick={() => this.onFlightClick(flight)}
+                      onClick={() => onFlightClick(flight)}
                     >
                       <View className="item-price">
                         <View className="flight-row">
